@@ -23,7 +23,7 @@ HOMEWORK_GRADE=DATA[:,2]##sets exam grade to array reading it from DATA Matrix a
 ATTENDANCE_GRADE=DATA[:,3]##sets exam grade to array reading it from DATA Matrix array
 ##PART a, b, c==============================================================================================================
 ##scattering plots
-fig=plt.figure("Scattering")
+fig=plt.figure()
 exam_vs_homework=plt.subplot2grid((3,1),(0,0),title="EXAM GRADE vs HOMEWORK ")##creating space for exam data hist
 exam_vs_attendance=plt.subplot2grid((3,1),(1,0),title="EXAM GRADE VS ATTENDANCE")##creating space for attendance data hist
 exam_vs_laboratory=plt.subplot2grid((3,1),(2,0),title="EXAM GRADE VS LABORATORY")##creating space for homework data hist
@@ -41,8 +41,8 @@ pdf_file.close()## closes the pdf file
 ##PART2================================================================================================================
 ## in this part we gonno do Using the Least Squares Method make a linear fit (y= ? + ?x) to each scattering plot and
 #   find ? and ? values and save it in pdf format.
-fig1=plt.figure("with best line ")
-homework=plt.subplot2grid((3,1),(0,0),title="EXAM GRADE vs HOMEWORK1 ")##creating space for exam data hist
+fig1=plt.figure()
+homework=plt.subplot2grid((3,1),(0,0),title="EXAM GRADE vs HOMEWORK ")##creating space for exam data hist
 attendance=plt.subplot2grid((3,1),(1,0),title="EXAM GRADE VS ATTENDANCE")##creating space for attendance data hist
 laboratory=plt.subplot2grid((3,1),(2,0),title="EXAM GRADE VS LABORATORY")##creating space for homework data hist
 def Least_Square_Method(y,place_of_plot):##calculatin alfa and betta
@@ -85,9 +85,9 @@ print("Exam grade vs homework grade alfa and betta ", alfa_1,betta_1)
 print("Exam grade vs attendance grade alfa and betta ", alfa_2,betta_2)
 print("Exam grade vs laboratory grade alfa and betta ", alfa_3,betta_3)
 print("===============================================================")
-pdf_fil=PdfPages("EXAM_VS_GRAPHS_with_bestLine.pdf")##opens the pdf file and names it
-pdf_fil.savefig(fig1)## saves the figure of hists in pdf
-pdf_fil.close()## closes the pdf file
+pdf_file=PdfPages("EXAM_VS_GRAPHS_with_bestLine.pdf")##opens the pdf file and names it
+pdf_file.savefig(fig)## saves the figure of hists in pdf
+pdf_file.close()## closes the pdf file
 
 ##======================================================================================================================
 ## THE ANOVA TEST , r2 part e and f
@@ -133,4 +133,3 @@ print("X2 for Exam grade vs Homework grade:",chi_square(HOMEWORK_GRADE))
 print("X2 for exam grade and attendance grade:",chi_square(ATTENDANCE_GRADE))
 print("X2 for exam grade and laboratory grade: ",chi_square(LABORATORY_GRADE))
 print("===============================================================")
-plt.show()

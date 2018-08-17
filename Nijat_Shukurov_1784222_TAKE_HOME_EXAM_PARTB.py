@@ -51,4 +51,3 @@ gaussian_fit(LABORATORY_GRADE,laboratory)
 pdf_file=PdfPages("Total_Grades_with_gaussianfit.pdf")##opens the pdf file and names it
 pdf_file.savefig(fig)## saves the figure of hists in pdf
 pdf_file.close()## closes the pdf file
-plt.show()
