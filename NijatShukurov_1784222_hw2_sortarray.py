@@ -34,21 +34,21 @@ class MYSORT:
                 #if taken member is same as member which next to it dont do anything
                 elif self.array[i] == self.array[j]:
                     pass
-        print("sorted array:")
-        print(self.array)
 
+        print(self.array)
 ##===============================
 
 ##MAIN FUNCTION
 #variables
 use_array=[]
-print("Hello using this program you can extend your array how much you want and sorting all member from small to big")
 
-b=0;
+a=input("please input to extend array >>")
+b=a
+
 ## using while program inputs the array memmbers
 while b!=-1:##-1 never can be added in array
 
-    a=input("Please, insert array member or and  '-1' to finish extend>>")
+    a=input("please insert array member or and  '-1' to finish extend>>")
     b=int(a)
 
     if b!=-1:##using this if statement -1 never added to the array
@@ -63,14 +63,7 @@ print(use_array)
 d=MYSORT(use_array)
 # USING array_sort method of MYSORT CLASS
 d.array_sort()
-print("=========================")
-print("NICAT SHUKUROV")
-print("ID 1784222")
-print("all rights reserved (c)")
-print("have a nice day :D")
-# for pause the command line screen
-import os
-os.system('pause')
+
 
 
 
